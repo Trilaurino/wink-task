@@ -1,7 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { setSelectedBook } from '../../../../Documents/Dev/wink-task/wink-task/src/store/booksSlice';
-import type { Book } from '../../../../Documents/Dev/wink-task/wink-task/src/types/books';
-
+import { Book } from '../types/books';
+import { setSelectedBook } from '../store/booksSlice';
 interface BookCardProps {
   book: Book;
 }

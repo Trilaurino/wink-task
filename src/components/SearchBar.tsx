@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import { setSearchTerm, setIsTyping } from '../../../../Documents/Dev/wink-task/wink-task/src/store/booksSlice';
 import debounce from 'debounce';
+import { setIsTyping, setSearchTerm } from '../store/booksSlice';
 
 export default function SearchBar() {
   const dispatch = useDispatch();

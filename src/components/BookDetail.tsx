@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { setSelectedBook } from '../../../../Documents/Dev/wink-task/wink-task/src/store/booksSlice';
-import type { RootState } from '../../../../Documents/Dev/wink-task/wink-task/src/store/store';
+import { RootState } from '../store/store';
+import { setSelectedBook } from '../store/booksSlice';
 
 export default function BookDetail() {
   const dispatch = useDispatch();

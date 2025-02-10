@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
-import type { RootState } from '../../../../Documents/Dev/wink-task/wink-task/src/store/store';
 import BookCard from './BookCard';
+import { RootState } from '../store/store';
 
 export default function BookList() {
   const { items, status, error } = useSelector((state: RootState) => state.books);
