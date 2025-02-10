@@ -25,9 +25,9 @@ The application allows users to **search for books** using the [Google Books API
 ## 💻 How to run the project
 
 1. Clone this repository
-2. Run npm install to install the dependencies
-3. Run npm run dev to start the project
-4. Open localhost:3000 in your browser
+2. Run `npm install`to install the dependencies
+3. Run `npm run dev` to start the project
+4. Open `localhost:3000` in your browser
 
 ---
 
