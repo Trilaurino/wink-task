@@ -1,13 +1,14 @@
 
 import { useDispatch, useSelector } from 'react-redux';
-import { setCurrentPage, setItemsPerPage } from '../../../../Documents/Dev/wink-task/wink-task/src/store/booksSlice';
-import type { RootState } from '../../../../Documents/Dev/wink-task/wink-task/src/store/store';
+import type { RootState } from '../store/store';
+import { setCurrentPage, setItemsPerPage } from '../store/booksSlice';
+
 export default function Pagination() {
   const dispatch = useDispatch();
   const { currentPage, itemsPerPage, totalItems } = useSelector((state: RootState) => state.books);
 
   const totalPages = Math.ceil(totalItems / itemsPerPage);
-  const itemsPerPageOptions = [5, 10, 15, 20];
+  const itemsPerPageOptions = [5, 10, 15, 20] as const;
 
   const handlePageChange = (page: number) => {
     dispatch(setCurrentPage(Math.max(1, Math.min(page, totalPages))));
@@ -22,7 +23,7 @@ export default function Pagination() {
         <select
           className="rounded border border-gray-300 p-1"
           value={itemsPerPage}
-          onChange={(e) => dispatch(setItemsPerPage(Number(e.target.value) as typeof itemsPerPageOptions[number]))}
+          onChange={(e) => dispatch(setItemsPerPage(parseInt(e.target.value) as typeof itemsPerPageOptions[number]))}
         >
           {itemsPerPageOptions.map((value) => (
             <option key={value} value={value}>
