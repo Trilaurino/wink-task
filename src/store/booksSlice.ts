@@ -27,11 +27,11 @@ const initialState: BooksState = {
 
 export const fetchBooks = createAsyncThunk(
   'books/fetchBooks',
-  async ({ searchTerm, limit }: { searchTerm: string; page: number; limit: number }) => {
+  async ({ searchTerm, page, limit }: { searchTerm: string; page: number; limit: number }) => {
     if (!searchTerm.trim()) return { items: [], totalItems: 0 };
-    // const startIndex = (page - 1) * limit;
+    const startIndex = (page - 1) * limit;
     const response = await fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(searchTerm)}&maxResults=${limit}`
+      `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(searchTerm)}&startIndex=${startIndex}&maxResults=${limit}`
     );
     const data: BooksResponse = await response.json();
     return data;
